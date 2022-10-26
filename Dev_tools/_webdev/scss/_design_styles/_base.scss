@@ -80,14 +80,16 @@ body {
     margin: 0;
     padding: 0 0 0;
     overflow-x: hidden; 
-    color: $Basecolor;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size:15px;
+
+
+    font-size:16px;
     line-height:18px;
     position:relative;
-    background-color: $neutral;
+    background-color: #F0EDE7;
+    
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     
 }  
 
@@ -95,7 +97,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: clarendon-urw, serif;
+ 
   font-weight: 300;
 }
 h1 {
