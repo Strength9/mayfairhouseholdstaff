@@ -1,0 +1,56 @@
+ .calltoaction {
+	 
+	 background-color:#000;
+	 color:#FFF;
+	 text-align:center;
+	 
+	 
+	 .call_content { 
+	 	display: flex;
+	 	flex-direction: row;
+	 	flex-wrap: wrap;
+	 	justify-content: center;
+	 	align-content: stretch;
+	 	align-items: center;
+	 	padding:40px 20px;
+	 	
+	 	.calltext {
+	 		order: 0;
+	 		flex: 0 0 100%;
+	 		align-self: auto;
+		 	padding:0 20px;
+		 	
+		 	font-size:23px;
+			 line-height:1.4;
+	 	}
+	 	.callbutton {
+		  	order: 0;
+		  	flex: 0 0 100%;
+		  	align-self: auto;
+		  	font-size:23px;
+			  padding:30px 0 0;
+		  	
+		  	.button {
+			  	font-size:20px;
+		  	}
+	  	}
+		  
+		  @media screen and (min-width: 700px ) {
+			  
+			   		flex-wrap: nowrap;
+			   		padding:40px 20px;
+			   		
+			   		.calltext {
+				   		flex: 0 1  auto;
+				   		padding:0 20px;
+			   		}
+			   		.callbutton {
+							flex: 0 1  auto;
+							padding:0px 0 0;
+						}
+	
+		  }
+	 
+ 	}
+	 
+ }

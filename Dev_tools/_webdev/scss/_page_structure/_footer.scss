@@ -1,1 +1,324 @@
 
+.footercall {
+	padding:60px 20px;
+	width:100%;
+	min-height: 300px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	
+	
+	.callcontent {
+		max-width:$contentwidth;
+		margin:0 auto;
+		display: grid; 
+	    grid-template-columns: 1fr; 
+	    grid-template-rows: minmax(0,auto) minmax(0,auto); 
+	    gap: 0px 0px; 
+	    grid-template-areas:  "textcontent" "textlinks"; 
+		
+		.textcontent { 
+			grid-area: textcontent;
+			color:#FFF;
+			
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			
+			p {
+				text-align:center;
+				margin:5px 0 20px;
+			}
+		 }
+		.textlinks { 
+			grid-area: textlinks;
+			color:#FFF;
+			
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			
+			ul {
+				margin:0;
+				padding:0;
+				list-style:none;
+				text-align:right;
+				
+					li {
+						margin:0;
+						padding:0;
+						list-style:none;
+						display:inline-block;
+						margin:0 10px 0;
+					}
+			}
+			
+		 }
+		 
+		@media screen and (min-width: 700px ) {
+			grid-template-columns: 1fr 300px; 
+			grid-template-rows: 1fr; 
+			gap: 0px 0px; 
+			grid-template-areas:  "textcontent textlinks"; 
+			
+			
+			.textcontent { 
+			
+				justify-content: center;
+				align-content: flex-start;
+				align-items: flex-start;
+				
+				p {
+					margin:5px 0 0;
+					text-align:left;
+				}
+			 }
+			.textlinks { 
+				justify-content: center;
+				align-content: flex-end;
+				align-items: flex-end;
+				
+				ul {
+					text-align: center;
+
+				}
+				
+			 }
+		}
+		@media screen and (min-width: 900px ) {
+			grid-template-columns: 1fr 420px; 
+		}
+
+	
+	}
+}
+
+
+
+
+
+footer {
+	background-color:#262525;
+	
+	.wcp-columns {
+		
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-template-rows: repeat(minmax(0, auto),3); 
+		gap: 20px 20px;  
+		grid-template-areas: 
+			"logo"  "quicklinks" "getintouch"; 
+		color:#FFF;
+		padding:50px 0;
+		
+		.wcp-column {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content:  center;
+			align-content:  center;
+			align-items:  center;
+			
+			&.logo {
+				justify-content:  center;
+				align-content:  center;
+				align-items:  center;
+				a{
+					//background-color:yellow;
+					width:220px;
+					
+					img { height:auto;
+						width:100%;
+					}
+				}
+			}
+			
+			&.logo { grid-area: logo; }
+			&.getintouch { grid-area: getintouch; }
+			&.legal { grid-area: legal; display:none; }
+			&.quicklinks { grid-area: quicklinks; }
+			
+			
+			ul {
+				list-style:none;
+				margin:0;
+				padding:0;
+				text-align:center;
+				
+				li {
+					list-style:none;
+					margin:0;
+					padding:0;
+					line-height: 25px;
+					font-size:14px;
+					
+					&.title {
+						font-size:16px;
+						margin:0 0 15px;
+						font-family: montserrat, sans-serif;
+						font-weight: 600;
+						font-style: normal;
+					}
+					
+					
+					&.social {
+						font-size:35px;
+						display:inline-block;
+						margin:25px 20px 0 0;
+						
+						&:last-child {
+							margin-right:0;
+						}
+					}
+					
+					a { 
+						color:inherit;
+						text-decoration:none;
+						
+						&:hover {color:$red;}
+					}
+				}
+			}
+		}
+		
+		@media screen and (min-width: 580px ) {
+			
+			grid-template-columns: 1fr 1fr; 
+			grid-template-rows: repeat(minmax(0, auto),3); 
+			gap: 20px 20px;  
+			grid-template-areas: 
+				"logo logo"  "quicklinks legal" "getintouch getintouch"; 
+				
+				.wcp-column {
+					
+					
+					
+				&.legal { grid-area: legal; display:flex; }	
+				
+				
+				&.title {
+					font-size:18px;
+				}
+				ul {
+				
+					li {
+					font-size:16px;
+					}
+				}
+			}
+		}
+		
+		@media screen and (min-width: 900px ) {
+			
+			grid-template-columns:230px 1fr 1fr 1fr; 
+			grid-template-rows: 1fr; 
+			grid-template-areas:  "logo getintouch quicklinks legal"; 
+			gap: 30px 30px;  
+			
+			.wcp-column {
+				flex-direction: row;
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				align-content:  flex-start;
+				align-items: flex-start;
+			
+			&.logo {
+				justify-content: flex-start;
+				align-content: stretch;
+				align-items: center;
+				
+				a{
+					width:220px;
+					
+					img { height:auto;
+						width:100%;
+					}
+				}
+			}
+			
+			
+			
+			ul {
+				text-align:left;
+				li {
+					text-align:left;
+					&.social {
+						font-size:35px;
+						display:inline-block;
+						margin:25px 20px 0 0;
+						text-align:left;
+						
+						&:last-child {
+							margin-right:0;
+						}
+					}
+				}
+			}
+			
+		}
+		
+		
+	}
+		
+		@media screen and (min-width: 1300px ) {
+			grid-template-columns:350px 1fr 250px 300px; 
+			
+			.wcp-column {
+				&.logo {
+					a{
+						width:280px;
+					}
+				}
+			}
+		}
+			
+		
+	}
+}
+
+
+.copyrightbar {
+	color:#FFF;
+	background-color:$black;
+	padding:10px 20px;
+	width:100%;
+	
+	div { max-width:$contentwidth; 
+		margin:0 auto; 
+		text-align:center;
+		line-height:1.3;
+		padding:5px 0;
+		font-size:15px;
+		color:rgba(255,255,255,0.7);
+		
+			@media screen and (min-width: 700px ) {
+			
+				text-align:left;
+			
+			}
+	}
+	
+	a {
+		color: $red;
+		text-decoration:none;
+		
+		&:hover {
+			color:inherit;
+		}
+	}
+	
+	
+}
