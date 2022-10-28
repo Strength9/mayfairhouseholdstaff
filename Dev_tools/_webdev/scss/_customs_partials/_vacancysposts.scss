@@ -1,5 +1,9 @@
 .vacancygrid {
+	padding:100px 0;
 	
+	@media screen and (min-width: 700px ) {
+		padding:200px 0;
+	}
 	h1 {
 		font-family: montserrat, sans-serif;
 		font-weight: 700;

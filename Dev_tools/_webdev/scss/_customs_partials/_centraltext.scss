@@ -1,6 +1,10 @@
 .centraltext {
 	text-align:center !important;
+	padding:100px 0;
 	
+	@media screen and (min-width: 700px ) {
+		padding:200px 0;
+	}
 	.wcp-columns {
 		
 		max-width:1000px;

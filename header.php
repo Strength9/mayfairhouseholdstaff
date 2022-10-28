@@ -21,8 +21,24 @@
 </head>
 
 <body <?php body_class();?>>
-<header>
-		<nav >
-			<?php wp_nav_menu( array(  'menu' => 'Menu Left','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 3 , 'items_wrap' => '<ul id="nav_menu_left" class="nav_menu_strip">%3$s</ul>' ) );?>
-		</nav>
-</header>
+
+ <header>
+	 
+	 <nav class="navigation-menu">
+		 
+		   <label class="menuopen" aria-label="Open navigation menu" for="menu-toggle">
+		   <i class="fa-light fa-bars"></i></label>
+		   <input type="checkbox" id="menu-toggle" />
+		   <?php wp_nav_menu( array(  'menu' => 'Main Nav','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 3 , 'items_wrap' => ' <ul class="main-navigation">
+		   <div class="logo"><a href="<?php echo home_url(); ?>"><img src="/wp-content/themes/mayfairhouseholdstaff/assets/img/svg/logo_mayfair_colour.svg" alt="Mayfair Household Staff" class="normallogo">
+		   <img src="/wp-content/themes/mayfairhouseholdstaff/assets/img/svg/logo_mayfair_white.svg" alt="Mayfair Household Staff" class="fixedlogo">
+		   </a></div>
+		   <label for="menu-toggle"  aria-label="Close navigation menu" class="menuclose"><i class="fa-thin fa-square-xmark"></i></label>%3$s</ul>' ) );?>  
+	 </nav>
+	 <ul class="contactblock">
+		 <li class="icon"><i class="fa-thin fa-phone"></i></li>
+		<li class="textinf">Speak to the team</li>
+		<li class="phoneinf"> <a href="#" title="Speak to the team">+447713  164737</a></li>
+		 <li class="buttonarea">  <a href="#" class="gt_button">Get in Touch</a>  </li>
+	 </ul>
+ </header>
