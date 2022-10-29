@@ -25,4 +25,3 @@ echo '<section '.$anchor.' class="'.$blockclass .'">
 
 
 ?>
-

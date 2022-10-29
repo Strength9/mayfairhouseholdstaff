@@ -1,0 +1,125 @@
+
+.centraltext {
+	text-align:center !important;
+	padding:100px 0 0;
+	
+	@media screen and (min-width: 700px ) {
+		padding:100px 0 0;
+	}
+	.wcp-columns {
+		
+		max-width:1000px;
+	}
+	
+	h1 {
+		font-family: montserrat, sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		color:$red;
+		text-transform: uppercase;
+		font-size:30px;
+		margin:0 auto 0px;
+	}
+	h2 {
+		text-transform: uppercase;
+		color:$mid;
+		font-family: montserrat, sans-serif;
+		font-weight: 300;
+		font-style: normal;
+		font-size:30px;
+		margin:0 auto;
+		margin:0 auto 25px;
+	}
+	
+	a {
+		color:$red;
+		text-decoration:none;
+		
+		&:hover {
+			color:$black;
+		}
+	}
+	
+	p {
+		&:last-child {
+			margin-bottom:0;
+		}
+	}
+}
+
+.job_details_page {
+	text-align:center !important;
+	padding:100px 0;
+	
+	@media screen and (min-width: 700px ) {
+		padding:200px 0;
+	}
+	
+	
+	.enquiryform {
+		background-color:$red;
+		padding:30px;
+		
+		h2 {
+			color:#FFF;
+		}
+		
+		.wpforms-container.wpforms-container-full {
+			width:100%;
+			margin-bottom:0;
+			
+			
+			select, input {
+				 border:0px;
+				 color:$mid;
+				 line-height:30px;
+				 height:45px;
+				 
+				 font-weight:400;
+			 }
+			 
+			 textarea {height:250px; margin-bottom:10px; border:0px;
+				  color:$mid; font-weight:400;}
+			 
+			 ::-webkit-input-placeholder { /* Edge */
+				 color: $mid;
+				 font-weight:400;
+			   }
+			   
+			   :-ms-input-placeholder { /* Internet Explorer 10-11 */
+				 color: $mid;
+				 font-weight:400;
+			   }
+			   
+			   ::placeholder {
+				 color: $mid;
+				 font-weight:400;
+			   }
+			   
+			 .wpforms-field-description {
+				 color:#FFF;
+			 }
+		}
+		.wpforms-submit-container {
+			width:100%;
+			
+			button[type="submit"] {
+				border:1px solid #FFF;
+				width:100%;
+				background-color:rgba(255,255,255,0);
+				text-align:center;
+				font-weight:600;
+				text-transform:uppercase;
+				color:#FFF;
+				letter-spacing:2.5px;
+				font-size: 18px;
+				transition : background-color 1s ;
+				
+				&:hover {
+					background-color:rgba(255,255,255,1);
+					color: $red;
+				}
+			}
+		}
+	}
+}

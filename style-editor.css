@@ -1927,6 +1927,117 @@ font-style: italic;
   }
 }
 
+.centraltext {
+  text-align: center !important;
+  padding: 100px 0 0;
+}
+@media screen and (min-width: 700px) {
+  .centraltext {
+    padding: 100px 0 0;
+  }
+}
+.centraltext .wcp-columns {
+  max-width: 1000px;
+}
+.centraltext h1 {
+  font-family: montserrat, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #DE0808;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0 auto 0px;
+}
+.centraltext h2 {
+  text-transform: uppercase;
+  color: #7C7676;
+  font-family: montserrat, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0 auto;
+  margin: 0 auto 25px;
+}
+.centraltext a {
+  color: #DE0808;
+  text-decoration: none;
+}
+.centraltext a:hover {
+  color: #000000;
+}
+.centraltext p:last-child {
+  margin-bottom: 0;
+}
+
+.job_details_page {
+  text-align: center !important;
+  padding: 100px 0;
+}
+@media screen and (min-width: 700px) {
+  .job_details_page {
+    padding: 200px 0;
+  }
+}
+.job_details_page .enquiryform {
+  background-color: #DE0808;
+  padding: 30px;
+}
+.job_details_page .enquiryform h2 {
+  color: #FFF;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full {
+  width: 100%;
+  margin-bottom: 0;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full select, .job_details_page .enquiryform .wpforms-container.wpforms-container-full input {
+  border: 0px;
+  color: #7C7676;
+  line-height: 30px;
+  height: 45px;
+  font-weight: 400;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full textarea {
+  height: 250px;
+  margin-bottom: 10px;
+  border: 0px;
+  color: #7C7676;
+  font-weight: 400;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full ::-webkit-input-placeholder { /* Edge */
+  color: #7C7676;
+  font-weight: 400;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #7C7676;
+  font-weight: 400;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full ::placeholder {
+  color: #7C7676;
+  font-weight: 400;
+}
+.job_details_page .enquiryform .wpforms-container.wpforms-container-full .wpforms-field-description {
+  color: #FFF;
+}
+.job_details_page .enquiryform .wpforms-submit-container {
+  width: 100%;
+}
+.job_details_page .enquiryform .wpforms-submit-container button[type=submit] {
+  border: 1px solid #FFF;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2.5px;
+  font-size: 18px;
+  transition: background-color 1s;
+}
+.job_details_page .enquiryform .wpforms-submit-container button[type=submit]:hover {
+  background-color: rgb(255, 255, 255);
+  color: #DE0808;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(100px);
