@@ -1,5 +1,5 @@
 
-.centraltext {
+.centraltextjv {
 	text-align:center !important;
 	padding:100px 0 0;
 	
@@ -19,6 +19,8 @@
 		text-transform: uppercase;
 		font-size:30px;
 		margin:0 auto 0px;
+		
+		
 	}
 	h2 {
 		text-transform: uppercase;
@@ -49,16 +51,44 @@
 
 .job_details_page {
 	text-align:center !important;
-	padding:100px 0;
+	padding:0px 0 100px;
 	
 	@media screen and (min-width: 700px ) {
-		padding:200px 0;
+		padding:  100px 0 200px;
 	}
 	
+	
+	.wcp-columns {
+	margin:0 auto;
+	max-width: $contentwidth;
+	width:90%;
+	display: grid; 
+	grid-template-columns: 1fr; 
+	grid-auto-rows: auto;
+	gap: 30px 30px; 
+	background-position: center top;
+	
+	background-repeat:no-repeat;
+	//border:  1px dashed red;
+	
+	
+	@media only screen and (min-width:800px) {
+		grid-template-columns: 1fr 400px; 
+		grid-template-rows: minmax(10px auto); 
+		gap: 0px 50px; 
+	}
+}
 	
 	.enquiryform {
 		background-color:$red;
 		padding:30px;
+		
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-content: stretch;
+		align-items: center;
 		
 		h2 {
 			color:#FFF;
@@ -120,6 +150,115 @@
 					color: $red;
 				}
 			}
+		}
+	}
+	
+	.jobinformtation {
+		@media only screen and (max-width:800px) {
+		
+		padding:0 20px;
+		
+		
+
+		
+		
+		
+	}
+	
+	
+	
+		
+		ul.jobdata {
+			list-style:none;
+			margin:0;
+			padding:0;
+			
+			li {
+				margin:0;
+				padding:0;
+				text-align:left;
+				
+				h2 {
+					font-size: 25px;
+					padding-bottom:20px;
+					margin-bottom:20px;
+					border-bottom: $red 1px solid;
+					
+					@media screen and (min-width: 600px ) {
+						font-size: 35px;
+					}
+				}
+				
+				h3 {
+					font-size: 18px;
+					display:inline-block;
+					margin-right:20px;
+					color:$red;
+				}
+				
+				p { display:inline-block;}
+				
+				ul  {
+					margin-bottom: 20px;
+					li {
+						font-size: 16px;
+						line-height: 1.7;
+						margin-bottom: 10px;
+						font-weight: 200;
+					}
+				}
+				strong {
+					
+				}
+				
+				
+			}
+		}
+	}
+}
+
+
+
+.failed {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start!important;
+	align-content: flex-start!important;
+	align-items: flex-start!important;
+	
+	h1 {
+		font-family: montserrat, sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		color:$red;
+		text-transform: uppercase;
+		font-size:30px;
+		margin:0 auto 0px;
+	}
+	h2 {
+		text-transform: uppercase;
+		color:$mid;
+		font-family: montserrat, sans-serif;
+		font-weight: 300;
+		font-style: normal;
+		font-size:30px;
+		margin:0 auto;
+		margin:0 auto 25px;
+	}
+	
+	a {
+		color:$red;
+		text-decoration:none;
+		
+		&:hover {
+			color:$black;
+		}
+	}
+	
+	p {
+		&:last-child {
+			margin-bottom:0;
 		}
 	}
 }

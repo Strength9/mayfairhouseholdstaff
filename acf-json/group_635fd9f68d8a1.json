@@ -1,11 +1,11 @@
 {
-    "key": "group_635a5cb93aaad",
-    "title": "Call to action",
+    "key": "group_635fd9f68d8a1",
+    "title": "Vacancy Page No Content",
     "fields": [
         {
-            "key": "field_635a5cb944035",
-            "label": "Call to action text",
-            "name": "calltext",
+            "key": "field_635fd9f68f9c7",
+            "label": "No Content Area Title",
+            "name": "nacarea_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -23,11 +23,11 @@
             "append": ""
         },
         {
-            "key": "field_635a5cef44036",
-            "label": "Link Icon",
-            "name": "link_icon",
+            "key": "field_635fd9f68f9cf",
+            "label": "No Content Area Sub Title",
+            "name": "nacarea_sub_title",
             "aria-label": "",
-            "type": "select",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,26 +36,18 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "fa-brands fa-whatsapp": "Whatsapp",
-                "fa-light fa-envelope": "Mail",
-                "fa-light fa-phone": "Phone",
-                "": "None"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_635a5dda44037",
-            "label": "Linkk Address",
-            "name": "linkk_address",
+            "key": "field_635fd9f68f9d4",
+            "label": "No Content Area Introduction",
+            "name": "nacarea_introduction",
             "aria-label": "",
-            "type": "link",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -64,7 +56,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -72,7 +68,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/block-call-to-action"
+                "value": "acf\/block-block-vacancy-page-grid"
             }
         ]
     ],
@@ -85,5 +81,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667215297
+    "modified": 1667229050
 }

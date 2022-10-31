@@ -38,7 +38,7 @@
 	 <ul class="contactblock">
 		 <li class="icon"><i class="fa-thin fa-phone"></i></li>
 		<li class="textinf">Speak to the team</li>
-		<li class="phoneinf"> <a href="#" title="Speak to the team">+447713  164737</a></li>
-		 <li class="buttonarea">  <a href="#" class="gt_button">Get in Touch</a>  </li>
+		<li class="phoneinf"> <a href="tel"+44447713164737" title="Speak to the team">+447713  164737</a></li>
+		 <li class="buttonarea">  <a href="/get-in-touch/" class="gt_button">Get in Touch</a>  </li>
 	 </ul>
  </header>

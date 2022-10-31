@@ -4,4 +4,5 @@ jQuery(window).scroll(function () {
         jQuery("header").addClass("fixed");
     } else {
         jQuery("header").removeClass("fixed");
+    }
 });

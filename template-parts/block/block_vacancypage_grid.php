@@ -1,7 +1,7 @@
 <?php
 /*
-Block Name: Block Vacancy Grid
-Block Description: Block Vacancy Grid
+Block Name: Block Vacancy Page Grid
+Block Description: Block Vacancy Page Grid
 Post Types: post, page, custom-type
 Block SVG: block_template.svg
 Block Category: s9blocks
@@ -18,12 +18,11 @@ $area_title = ! empty( get_field('area_title') ) ? '<h1>'.get_field('area_title'
 $area_sub_title = ! empty( get_field('area_sub_title') ) ? '<h2>'.get_field('area_sub_title').'</h2>' : '';
 $area_introduction = ! empty( get_field('area_introduction') ) ? get_field('area_introduction') : '';
 
-$select_number_to_show = ! empty( get_field('number_of_vacancies_to_show') ) ? get_field('number_of_vacancies_to_show') : ''; 
 
 $args = array(  
 		'post_type' => 'job_vacancy',
 		'post_status' => 'publish',
-		'posts_per_page' => $select_number_to_show, 
+		'posts_per_page' => 200, 
 		'orderby' => 'title', 
 		'order' => 'ASC', 
 	);
@@ -57,30 +56,24 @@ $push = '<section '.$anchor.' class="'.$blockclass .'">
 
 wp_reset_postdata(); 
 else :
-$no_content_title = ! empty( get_field('no_content_title','options') ) ? '<h1>'.get_field('no_content_title','options').'</h1>' : '';
-$no_content_sub_title = ! empty( get_field('no_content_sub_title','options') ) ? '<h2>'.get_field('no_content_sub_title','options').'</h2>' : '';
-$no_content_text= ! empty( get_field('no_content_text','options') ) ? get_field('no_content_text','options') : '';
-
-$no_content_link_information = ! empty( get_field('no_content_link_information','options') ) ? get_field('no_content_link_information','options') : '';
-$no_content_link_icon = ! empty( get_field('no_content_link_icon','options') ) ? '<i class="'.get_field('no_content_link_icon','options').'"></i>' : '';
-
-if (!empty($no_content_link_information)) {
 	
-	$ncbutton = '<a href="'.$no_content_link_information["url"].'" title="'.$no_content_link_information["title"].'" target="'.$no_content_link_information["target"].'" class="button red">'.$no_content_link_icon.$no_content_link_information["title"].'</a>';
+	$no_content_title = ! empty( get_field('nacarea_title') ) ? '<h1>'.get_field('nacarea_title').'</h1>' : '';
+	$no_content_sub_title = ! empty( get_field('nacarea_sub_title') ) ? '<h2>'.get_field('nacarea_sub_title').'</h2>' : '';
+	$no_content_text= ! empty( get_field('nacarea_introduction') ) ? get_field('nacarea_introduction') : '';
+
 	
-}else {
-	$ncbutton = '';
-};
-
-
-
-
-$push =  '<section '.$anchor.' class="centraltext">
+$push = '<section class="job_details_page" id="uploadcv">
 	<div class="wcp-columns">
-		 <div class="wcp-column full">'.$no_content_title.$no_content_sub_title.$no_content_text.$ncbutton.'</div>
+		 <div class="wcp-column jobinformtation failed">
+			'.$no_content_title.$no_content_sub_title.$no_content_text.'
+		 </div>
+		 <div class="wcp-column enquiryform">
+			 <h2>Appy today !</h2>
+			'.do_shortcode('[wpforms id="256"]').'
+		 </div>
+		 
 	</div>
 </section>';
-
 
 endif;
 

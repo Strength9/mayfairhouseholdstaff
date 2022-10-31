@@ -216,7 +216,7 @@ function custom_post_type_local__vacancies() {
 		'label'                 => __( 'Job Vacancy', 'text_domain' ),
 		'description'           => __( 'Job Vacancies', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title','editor','thumbnail' ),
+		'supports'              => array( 'title','thumbnail' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -377,19 +377,56 @@ function wpb_add_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 */
 
-/**
-	 * Favicons
-	 
+
 add_action( 'wp_head', 'ilc_favicon');
 function ilc_favicon(){
-	echo '<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon-16x16.png">
-	<link rel="manifest" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/site.webmanifest">
-	<link rel="mask-icon" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/favicon.ico">
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/favicon-16x16.png">
+	<link rel="manifest" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/favicon.ico">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="/wp-content/themes/PurleyMortgageSolutions/assets/img/fav/browserconfig.xml">
+	<meta name="msapplication-config" content="/wp-content/themes/mayfairhouseholdstaff/assets/img/fav/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">';
 }
-*/
+
+
+/**
+ * Register the Smart Tag so it will be available to select in the form builder.
+ *
+ * @link   https://wpforms.com/developers/how-to-create-a-smart-tag-from-an-acf-field/
+ */
+ 
+function wpf_dev_register_smarttag( $tags ) {
+  
+	// Key is the tag, item is the tag name.
+	$tags[ 'job_contact_email_address' ] = 'Contact Email Address';
+  
+	return $tags;
+}
+ 
+add_filter( 'wpforms_smart_tags', 'wpf_dev_register_smarttag' );
+  
+/**
+ * Process the Smart Tag.
+ *
+ * @link   https://wpforms.com/developers/how-to-create-a-smart-tag-from-an-acf-field/
+ */
+ 
+function wpf_dev_process_smarttag( $content, $tag ) {
+  
+	// Only run if it is our desired tag.
+	if ( 'job_contact_email_address' === $tag ) {
+ 
+		//Get the field name from ACF
+		$my_acf_field = get_field( 'job_contact_email_address', get_the_ID() );
+ 
+		// Replace the tag with our link.
+		$content = str_replace( '{job_contact_email_address}', $my_acf_field, $content );
+	}
+  
+	return $content;
+}
+ 
+add_filter( 'wpforms_smart_tag_process', 'wpf_dev_process_smarttag', 10, 2 );

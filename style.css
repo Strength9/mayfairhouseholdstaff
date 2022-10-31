@@ -431,6 +431,9 @@ p {
   margin-bottom: 25px;
   font-weight: 200;
 }
+p strong {
+  font-weight: 600;
+}
 
 .fade-in {
   opacity: 0;
@@ -462,6 +465,12 @@ p {
 }
 .button:hover {
   background-color: #DE0808;
+  color: #FFF;
+}
+.button.red {
+  border: 4px solid #DE0808;
+}
+.button.red:hover {
   color: #FFF;
 }
 
@@ -624,7 +633,7 @@ header .navigation-menu .menuopen {
   color: #000000;
 }
 header .navigation-menu .menuopen:hover {
-  color: yellow;
+  color: #DE0808;
 }
 header .navigation-menu .menuclose {
   display: none;
@@ -673,7 +682,7 @@ header .navigation-menu #menu-toggle:checked + .main-navigation label.menuclose 
   color: #FFF;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation label.menuclose:hover {
-  color: yellow;
+  color: #DE0808;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li {
   line-height: 1.6;
@@ -683,7 +692,7 @@ header .navigation-menu #menu-toggle:checked + .main-navigation li a {
   color: #FFF;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li a:hover {
-  color: yellow;
+  color: #DE0808;
 }
 header .navigation-menu #menu-toggle:checked + .main-navigation li > ul {
   margin: 0px auto;
@@ -1881,7 +1890,14 @@ font-style: italic;
 .longtext p {
   width: 100%;
 }
-.longtext ul {
+.longtext p a {
+  color: #DE0808;
+  text-decoration: none;
+}
+.longtext p a:hover {
+  color: #000000;
+}
+.longtext ul, .longtext ol {
   font-size: 16px;
   line-height: 1.7;
   margin: 0 25px 25px #DE0808;
@@ -1896,19 +1912,19 @@ font-style: italic;
   }
 }
 
-.centraltext {
+.centraltextjv {
   text-align: center !important;
   padding: 100px 0 0;
 }
 @media screen and (min-width: 700px) {
-  .centraltext {
+  .centraltextjv {
     padding: 100px 0 0;
   }
 }
-.centraltext .wcp-columns {
+.centraltextjv .wcp-columns {
   max-width: 1000px;
 }
-.centraltext h1 {
+.centraltextjv h1 {
   font-family: montserrat, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -1917,7 +1933,7 @@ font-style: italic;
   font-size: 30px;
   margin: 0 auto 0px;
 }
-.centraltext h2 {
+.centraltextjv h2 {
   text-transform: uppercase;
   color: #7C7676;
   font-family: montserrat, sans-serif;
@@ -1927,29 +1943,53 @@ font-style: italic;
   margin: 0 auto;
   margin: 0 auto 25px;
 }
-.centraltext a {
+.centraltextjv a {
   color: #DE0808;
   text-decoration: none;
 }
-.centraltext a:hover {
+.centraltextjv a:hover {
   color: #000000;
 }
-.centraltext p:last-child {
+.centraltextjv p:last-child {
   margin-bottom: 0;
 }
 
 .job_details_page {
   text-align: center !important;
-  padding: 100px 0;
+  padding: 0px 0 100px;
 }
 @media screen and (min-width: 700px) {
   .job_details_page {
-    padding: 200px 0;
+    padding: 100px 0 200px;
+  }
+}
+.job_details_page .wcp-columns {
+  margin: 0 auto;
+  max-width: 1320px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 30px 30px;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 800px) {
+  .job_details_page .wcp-columns {
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: minmax(10px auto);
+    gap: 0px 50px;
   }
 }
 .job_details_page .enquiryform {
   background-color: #DE0808;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
 }
 .job_details_page .enquiryform h2 {
   color: #FFF;
@@ -2005,4 +2045,85 @@ font-style: italic;
 .job_details_page .enquiryform .wpforms-submit-container button[type=submit]:hover {
   background-color: rgb(255, 255, 255);
   color: #DE0808;
+}
+@media only screen and (max-width: 800px) {
+  .job_details_page .jobinformtation {
+    padding: 0 20px;
+  }
+}
+.job_details_page .jobinformtation ul.jobdata {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.job_details_page .jobinformtation ul.jobdata li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.job_details_page .jobinformtation ul.jobdata li h2 {
+  font-size: 25px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: #DE0808 1px solid;
+}
+@media screen and (min-width: 600px) {
+  .job_details_page .jobinformtation ul.jobdata li h2 {
+    font-size: 35px;
+  }
+}
+.job_details_page .jobinformtation ul.jobdata li h3 {
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 20px;
+  color: #DE0808;
+}
+.job_details_page .jobinformtation ul.jobdata li p {
+  display: inline-block;
+}
+.job_details_page .jobinformtation ul.jobdata li ul {
+  margin-bottom: 20px;
+}
+.job_details_page .jobinformtation ul.jobdata li ul li {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.failed {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start !important;
+  align-content: flex-start !important;
+  align-items: flex-start !important;
+}
+.failed h1 {
+  font-family: montserrat, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #DE0808;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0 auto 0px;
+}
+.failed h2 {
+  text-transform: uppercase;
+  color: #7C7676;
+  font-family: montserrat, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0 auto;
+  margin: 0 auto 25px;
+}
+.failed a {
+  color: #DE0808;
+  text-decoration: none;
+}
+.failed a:hover {
+  color: #000000;
+}
+.failed p:last-child {
+  margin-bottom: 0;
 }

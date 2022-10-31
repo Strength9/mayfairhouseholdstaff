@@ -15,7 +15,28 @@ include('______partials_global.php');
 /* --------- */
 
 
-$button = '<a href="#" title="Whats app the team" class="button"><i class="fa-brands fa-whatsapp"></i>WhatsApp Today!</a>';
+
+
+$display_link_button = ! empty( get_field('display_link_button') ) ? get_field('display_link_button') : 'no';
+
+if ($display_link_button === 'yes') {
+	
+	
+	$link_information = ! empty( get_field('link_information') ) ? get_field('link_information') : '';
+	$icon = ! empty( get_field('link_icon') ) ? '<i class="'.get_field('link_icon').'"></i>' : '';
+	
+	if (!empty($link_information)) {
+		
+		$button = '<a href="'.$link_information["url"].'" title="'.$link_information["title"].'" target="'.$link_information["target"].'" class="button">'.$icon.$link_information["title"].'</a>';
+		
+	}else {
+		$button = '';
+	};
+	
+	
+} else {
+	$button = '';
+}
 
 
 $background_image = ! empty( get_field('background_image') ) ? 'style="background-image:url('.get_field('background_image').');"' : '';
@@ -29,4 +50,3 @@ echo '<section '.$anchor.' class="'.$blockclass .'" '.$background_image.'>
 	</div>
 </section>';
 ?>
-<i class=""></i>

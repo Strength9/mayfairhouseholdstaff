@@ -10,8 +10,21 @@ $tiktok = ! empty( get_field('tiktok','options') ) ? '<li class="social"><a href
 
 
 $footer_call_to_action_text = ! empty( get_field('footer_call_to_action_text','options') ) ? get_field('footer_call_to_action_text','options') : '';
-
 $call_to_action_background = ! empty( get_field('call_to_action_background','options') ) ? 'style="background-image:url('.get_field('call_to_action_background','options').');"' : '';
+
+
+$args = array(  'post_type' => 'job_vacancy','post_status' => 'publish','posts_per_page' => 1, 'orderby' => 'title', 'order' => 'ASC', );
+
+$chkloop = new WP_Query( $args ); 
+
+if($chkloop->have_posts()) :
+$sp = '1';
+else :
+	$sp = '0';
+endif;
+
+
+
 
 // 
 
@@ -23,8 +36,12 @@ $rows = $footer_links;
 if( $rows ) {
 	$rwButtons = '<ul class="callbuttons">';
 	foreach( $rows as $row ) {
+		$showif = !empty ($row['show_if_jobs_empty']) ? $row['show_if_jobs_empty']: '0';
 		$fltarget = ! empty( $row['footer_buttons']['target'] ) ? ' target="'.$row["footer_buttons"]["target"].'"' : '';
+		
+		if ($showif === $sp) {
 		 $rwButtons .='<li><a href="'.$row['footer_buttons']['url'].'" title="'.$row['footer_buttons']['title'].'" $fltarget class="button">'.$row['footer_buttons']['title'].'</a></li>';
+		 };
 	}
 	$rwButtons .='</ul>';
 }
