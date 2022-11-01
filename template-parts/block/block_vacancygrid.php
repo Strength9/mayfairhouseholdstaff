@@ -38,7 +38,7 @@ $post_id = get_the_ID();
 	$thumbnail_url = get_the_post_thumbnail_url();
 	$extract =  ! empty( get_field('pay_details',$post_id) ) ? get_field('pay_details',$post_id) : ''; 
 	$gridoutput .= '<article>
-				<div class="thumbnail" style="background-image:url('.$thumbnail_url.');"><a href="'.get_permalink().'" title="Find out more about this job vacancy at Mayfair Household Staff"" class="overlay">Click to Find Out More</a></div><h3>'.
+				<div class="thumbnail" style="background-image:url('.$thumbnail_url.');"><a href="'.get_permalink().'" title="Find out more about this job vacancy at Mayfair Household Staff" class="overlay">Click to Find Out More</a></div><h3>'.
 				get_the_title().'</h3><div class="linkbox"><span>'.$extract.'</span><a href="'.get_permalink().'" title ="Find out more about this job vacancy at Mayfair Household Staff">Read More</a></div>
 	</article>';
 	
