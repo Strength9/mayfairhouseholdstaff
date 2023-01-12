@@ -30,7 +30,7 @@
 		   <i class="fa-light fa-bars"></i></label>
 		   <input type="checkbox" id="menu-toggle" />
 		   <?php wp_nav_menu( array(  'menu' => 'Main Nav','container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 3 , 'items_wrap' => ' <ul class="main-navigation">
-		   <div class="logo"><a href="<?php echo home_url(); ?>"><img src="/wp-content/themes/mayfairhouseholdstaff/assets/img/svg/logo_mayfair_colour.svg" alt="Mayfair Household Staff" class="normallogo">
+		   <div class="logo"><a href="https://mayfairhouseholdstaff.co.uk/"><img src="/wp-content/themes/mayfairhouseholdstaff/assets/img/svg/logo_mayfair_colour.svg" alt="Mayfair Household Staff" class="normallogo">
 		   <img src="/wp-content/themes/mayfairhouseholdstaff/assets/img/svg/logo_mayfair_white.svg" alt="Mayfair Household Staff" class="fixedlogo">
 		   </a></div>
 		   <label for="menu-toggle"  aria-label="Close navigation menu" class="menuclose"><i class="fa-thin fa-square-xmark"></i></label>%3$s</ul>' ) );?>  
